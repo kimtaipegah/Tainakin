@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tainakin</title>
+    <style>
+        body {
+            background-color: #ff66b2;
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-top: 50px;
+        }
+        p {
+            font-size: 1.2em;
+            color: #fff;
+        }
+        #panel {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+        button {
+            background-color: #ff33cc;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1a8c;
+        }
+        .side {
+            position: absolute;
+            top: 30%;
+            right: 10px;
+            background-color: #ff66b2;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .side a {
+            color: black;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+        .side a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="panel">
+        <h1>سلام خیلی خوش اومدید</h1>
+        <p>هر کی بزنه روی شماره ی یک گیه</p>
+
+        <button onclick="showMessage('1')">گزینه 1</button>
+        <button onclick="showMessage('2')">گزینه 2</button>
+
+        <p id="message"></p>
+    </div>
+
+    <div class="side">
+        <a href="#" onclick="openNewWindow()">☰</a>
+    </div>
+
+    <script>
+        function showMessage(option) {
+            if(option === '1') {
+                document.getElementById('message').innerHTML = "چون روی گزینه ی یک کلیک کردید شما گی شدید برای خنثی کردن این عمل گزینه ی دوم رو کلیک کنید.";
+            } else if(option === '2') {
+                document.getElementById('message').innerHTML = "404 ، چیزی گی بودن شمارو باطل نخواهد کرد.";
+            }
+        }
+
+        function openNewWindow() {
+            window.open('about:blank', '_blank').document.write('<h1>نجات یافتی</h1>');
+        }
+    </script>
+</body>
+</html>
